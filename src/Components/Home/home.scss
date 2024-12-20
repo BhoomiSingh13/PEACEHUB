@@ -1,0 +1,358 @@
+.home {
+    width: 100%;
+    height: 100vh; /* Ensure it spans the full viewport height */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-image: url('../../Assets/hero (1).png'); /* Set the hero image as background */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+
+    .homeContent {
+        width: 100%;
+        height: max-content;
+        padding: 8rem 1.5rem 3rem;
+        display: flex;
+        row-gap: 1rem;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        margin: auto;
+        color: var(--whiteColor);
+        z-index: 1; /* Ensure content is above the background */
+
+        .textDiv {
+            padding: 1rem 0;
+            margin-top: -1rem;
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: flex-start; /* Align text to the left */
+
+            .smallText {
+                font-size: 18px;
+                margin-bottom: 1rem; /* Space between "Counselling" and "Group Therapy" */
+                position: relative;
+            }
+
+            /* White line below each text */
+            .smallText::after {
+                content: "";
+                position: absolute;
+                bottom: -15px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: var(--whiteColor);
+            }
+
+            .icon {
+                font-size: 25px;
+                color: var(--whiteColor);
+                margin-left: 170px; /* Space between text and arrow */
+            }
+        }
+
+        .cardDiv {
+            width: 30%; /* Half the width of the page */
+            margin: 2rem auto; /* Center the card horizontally */
+            padding: 1rem;
+            margin-bottom: 8rem;
+            margin-top: 1rem;
+            background: rgba(255, 255, 255, 0.3); /* White with 30% transparency */
+            border: 2px solid white; /* Add a white border */
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            text-align: center; /* Center content */
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
+            align-items: center;
+            justify-content: center;
+            transform: translateX(-120%); /* Move the card 20% of its width to the left */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
+        }
+
+        .cardContent {
+            margin-bottom: 1rem; /* Space between content and icon */
+            text-align: left;
+        }
+
+        .cardContent h2 {
+            font-size: 1.3rem; /* Adjust heading size */
+            color: var(--whiteColor); /* Text color */
+            margin-bottom: 0.5rem; /* Space below the heading */
+            text-align: left;
+        }
+
+        .cardContent p {
+            font-size: 1rem; /* Adjust paragraph size */
+            color: var(--whiteColor); /* Text color */
+        }
+
+        .plusIcon {
+            font-size: 50px; /* Make the plus icon larger */
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            cursor: pointer; /* Make the icon clickable */
+            color: #666; /* Default icon color */
+        }
+
+        .plusIcon:hover {
+            background-color: white; /* Change background to white */
+            color: black; /* Change icon color to black */
+            border-radius: 50%; /* Add a circular effect */
+            padding: 10px; /* Add padding for better hover design */
+        }
+
+         /* New Profile Pictures Section */
+    .profilePictures {
+        position: absolute;
+        bottom: -25px; /* Adjust based on design */
+        display: flex;
+        align-items: center;
+        gap: 0.1rem;
+        z-index: 1;
+  
+        .profilePic {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 3px solid white;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          z-index: 1;
+        }
+  
+        .profilePic:nth-child(2) {
+          margin-left: -15px; /* Overlap effect */
+          z-index: 2;
+        }
+  
+        .profilePic:nth-child(3) {
+          margin-left: -15px; /* Overlap effect */
+          z-index: 3;
+        }
+      }
+
+      /* Styling for the new image and text */
+.imageContainer {
+    text-align: center;
+    margin-bottom: 22rem; /* Adjusts the margin between the image and the schedule section */
+    top: 10;
+    right: 0;
+    z-index: 3rem;
+  }
+  
+  .communityImage {
+    width: 100%;
+    max-width: 250px; /* Adjust max width if needed */
+    border-radius: 20px; /* Border radius for rounded corners */
+    object-fit: cover; /* Ensures the image fits nicely without distortion */
+    position: relative;
+  }
+  
+  .imageText {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: var(--whiteColor);
+    font-weight: bold;
+  }
+  
+
+        /* New Book a Schedule section */
+        .scheduleDiv {
+            position: absolute;
+            top: 20%;
+            right: 3%; /* Rightmost position */
+            width: 350px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.3); /* White with 30% transparency */
+            border: 2px solid white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            z-index: 2;
+            margin-top: 14rem;
+        }
+
+        .scheduleDiv h3 {
+            font-size: 1.5rem;
+            color: black;
+            margin-bottom: -0.3rem;
+        }
+
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr); /* 7 columns for days */
+            grid-gap: 5px;
+            text-align: center;
+        }
+
+        .day {
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 50%;
+            background-color: white;
+            color: black;
+            font-size: 14px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .day:hover {
+            transform: scale(1.1); /* Slightly enlarge on hover */
+            background-color: #e6f7ff; /* Light blue background on hover */
+        }
+
+        .day.selected {
+            background-color: #1e91f0; /* Green for selected day */
+            color: white;
+            font-weight: bold;
+        }
+
+        .day.disabled {
+            background-color: #f0f0f0; /* Dimmed background for disabled days */
+            color: #aaa; /* Dimmed text color */
+            cursor: not-allowed; /* Indicate unclickable */
+        }
+
+        .monthSelector {
+            margin-bottom: 0.1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 1.5rem; /* Add spacing between arrows and month/year */
+        }
+
+        .monthSelector button {
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            color: black;
+            cursor: pointer;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .monthSelector button:hover {
+            color: #1e91f0; /* Highlight on hover */
+            transform: scale(1.1); /* Enlarge slightly on hover */
+        }
+
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr); /* Create 7 columns */
+            gap: 10px;
+        }
+
+        .day {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            color: black;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .day:hover {
+            transform: scale(1.1);
+            background-color: #1e91f0;
+            color: white;
+        }
+
+        .day.selected {
+            background-color: #1e91f0;
+            color: white;
+            font-weight: bold;
+        }
+
+        .day.disabled {
+            background-color: #f0f0f0;
+            color: #aaa;
+            cursor: not-allowed;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .calendar {
+                grid-template-columns: repeat(7, 1fr); /* Keep 7 columns for small screens */
+                gap: 5px; /* Reduce gap */
+            }
+
+            .day {
+                width: 30px; /* Adjust size for smaller screens */
+                height: 30px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .calendar {
+                grid-template-columns: repeat(7, 1fr); /* Ensure single row for very small screens */
+                gap: 2px;
+            }
+
+            .day {
+                width: 28px; /* Further reduce size for mobile */
+                height: 28px;
+                font-size: 10px;
+            }
+
+            .scheduleDiv {
+                width: 100%; /* Make scheduleDiv full width on small screens */
+                padding: 1rem;
+                margin-top: 8rem;
+            }
+        }
+
+        /* New Get Started Button */
+    .getStartedDiv {
+        position: absolute;
+        bottom: 30px; /* Adjust based on where you want it */
+        left: 50%;
+        transform: translateX(-50%);
+      }
+  
+      .getStartedBtn {
+        padding: 0.7rem 2.5rem;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-right: -5rem;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+  
+      .getStartedBtn:hover {
+        background-color: #1e91f0;
+        color: white;
+      }
+
+      .getStartedArrow {
+    margin-left: 10px; /* Space between the text and arrow */
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.getStartedBtn:hover .getStartedArrow {
+    transform: translateX(5px); /* Arrow moves to the right on hover */
+}
+
+    }
+}

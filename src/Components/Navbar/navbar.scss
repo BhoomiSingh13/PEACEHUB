@@ -1,0 +1,295 @@
+:root {
+    --PrimaryColor: hsl(199, 100%, 33%);
+    --SecondaryColor: hsl(187, 85%, 43%);
+    --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: rgb(240, 240, 246);
+    --cardBG: rgb(225, 225, 235);
+  }
+  
+  .header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--whiteColorDeam);
+    width: 100%;
+    padding: 1rem;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(2, 15, 29, 0.242);
+    background: transparent;
+  
+    .logo {
+      color: var(--whiteColor);
+      font-weight: 600;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+  
+      .icon {
+        font-size: 25px;
+        color: var(--whiteColor);
+        transform: translate(5px);
+      }
+    }
+  
+    .navBar {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center; /* Center the nav items */
+      align-items: center;
+    }
+  
+    .navLists {
+      display: flex;
+      justify-content: center; /* Center the nav items horizontally */
+      flex-grow: 1;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 2rem; /* Adds more space between the items */
+    }
+  
+    .navItem {
+      padding: 0 1.5rem; /* Add spacing between items */
+    }
+  
+    .navLink {
+      color: var(--whiteColor);
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+  
+      &:hover {
+        color: var(--PrimaryColor);
+      }
+    }
+  
+    .sign-in {
+      margin-left: 18px; /* Push the Sign In button to the extreme right */
+      .btn {
+        background: var(--PrimaryColor);
+        color: var(--whiteColor);
+        border: none;
+        padding: 0.5rem 1.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+
+        &:hover {
+          background: var(--SecondaryColor);
+        }
+      }
+    }
+  
+    @media screen and (max-width: 768px) {
+      .navBar {
+        position: absolute;
+        background: var(--whiteColorDeam);
+        height: max-content;
+        width: 80%;
+        border-radius: 1rem;
+        top: -500rem;
+        left: 50%;
+        padding: 0.5rem;
+        transform: translate(-50%);
+        z-index: 2000;
+        box-shadow: 0 2px 4px rgba(2, 15, 29, 0.904);
+        transition: 0.5s ease-in-out;
+  
+        .navLists {
+          flex-direction: column;
+          justify-content: center;
+          width: 100%;
+          margin: auto;
+          padding: 0.5rem 0;
+  
+          .navItem {
+  
+            .navLink {
+              color: var(--textColor);
+              font-size: 0.9rem;
+              font-weight: 600;
+  
+              &:hover {
+                color: var(--PrimaryColor);
+              }
+            }
+          }
+  
+          .btn {
+            margin-top: 1rem;
+  
+            a {
+              font-weight: 600;
+              color: var(--whiteColor);
+            }
+          }
+        }
+  
+        .closeNavbar {
+          position: absolute;
+          top: 1rem;
+          right: 1.5rem;
+          color: var(--PrimaryColor);
+  
+          &:hover {
+            color: var(--SecondaryColor);
+          }
+        }
+      }
+  
+      .activeNavbar {
+        top: 7rem;
+      }
+    }
+  
+    @media screen and (min-width: 769px) {
+      .toggleNavbar,
+      .closeNavbar {
+        display: none;
+      }
+
+      .toggleNavbar {
+        color: var(--whiteColor); /* Ensure white text color */
+        background-color: transparent; /* Optionally, make the background transparent */
+        border: none; /* Remove any borders */
+        cursor: pointer; /* Add cursor pointer */
+      }
+      
+      .toggleNavbar:hover {
+        color: var(--SecondaryColor); /* Optional: Change text color on hover */
+      }
+      
+  
+      .header {
+        padding: 1.5rem 2rem;
+  
+        .navBar {
+          .navLists {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+          }
+        }
+      }
+    }
+  
+    @media screen and (min-width: 960px) {
+      .header {
+        .navBar {
+          .navLists {
+            .navItem {
+              padding: 0 0.7rem;
+            }
+          }
+        }
+      }
+    }
+  
+    @media screen and (min-width: 1240px) {
+      .header {
+        padding: 1rem 0.5rem;
+      }
+    }
+  
+    /* Dropdown styles */
+.sign-in {
+    position: relative;
+  
+    .btn {
+      background: var(--PrimaryColor);
+      color: var(--whiteColor);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      display: block;
+      width: 100%; /* Ensuring button spans the full width */
+  
+      &:hover {
+        background: var(--SecondaryColor);
+      }
+    }
+  
+    /* Dropdown Menu */
+    .dropdown {
+      display: none; /* Initially hidden */
+      position: absolute;
+      top: 2.5rem; /* Position below the button */
+      left: 0;
+      background: var(--whiteColorDeam);
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      list-style: none;
+      padding: 0.5rem;
+      border-radius: 1rem;
+      z-index: 2000;
+      max-height: 300px; /* Limit the height */
+      overflow-y: auto; /* Allow scrolling if content exceeds the max-height */
+      white-space: nowrap; /* Prevent text from wrapping */
+  
+      /* Set the width based on content width */
+      width: auto; 
+      min-width: 160px; /* Optional: ensure it doesn't get too small */
+  
+      li {
+        padding: 0.5rem 1rem;
+        text-align: center;
+        white-space: nowrap; /* Prevent text from wrapping */
+        overflow: hidden;
+        text-overflow: ellipsis; /* Show ellipsis if text overflows */
+  
+        a {
+          text-decoration: none;
+          color: var(--textColor);
+          font-weight: 600;
+          display: block; /* Ensure the link spans the entire li */
+          padding: 0.5rem 0; /* Ensure proper spacing around text */
+          width: 100%;
+          text-align: center;
+  
+          /* Apply the same styling as the .btn */
+          background: var(--PrimaryColor); /* Same background as the button */
+          color: var(--whiteColor); /* Same text color as the button */
+          border-radius: 5px; /* Same border-radius as the button */
+          padding: 0.5rem 1rem; /* Same padding as the button */
+          cursor: pointer; /* Pointer cursor on hover */
+          font-weight: 600; /* Same font-weight as the button */
+  
+          /* Hover effect */
+          &:hover {
+            background: var(--SecondaryColor); /* Same hover effect as the button */
+          }
+        }
+      }
+    }
+  
+    /* Show dropdown when active */
+    .dropdown.active {
+      display: block;
+    }
+  }
+  
+  /* Adjust for mobile */
+  @media screen and (max-width: 768px) {
+    .sign-in {
+      .dropdown {
+        width: auto; /* Adjust width based on content */
+        min-width: 160px; /* Optional: ensure it doesn't get too small */
+        border-radius: 1rem;
+        top: 2.5rem; /* Ensure it's positioned below the button */
+        left: 0;
+        box-shadow: 0 2px 4px rgba(2, 15, 29, 0.2);
+      }
+    }
+  }
+  
+  }  
+  
